@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "b站动态过滤",
+    "version": "1.0",
+    "description": "Bilibili网页版动态过滤插件",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/B.png",
+            "48": "icons/B.png",
+            "128": "icons/B.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://t.bilibili.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}

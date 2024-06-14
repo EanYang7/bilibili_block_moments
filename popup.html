@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bilibili Extension</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+      }
+      #keywordInputContainer {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      #keyword {
+        flex: 1;
+        padding: 5px;
+        font-size: 14px;
+      }
+      #addKeyword {
+        padding: 5px;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+      #drawerToggle {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+      }
+      #drawer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      #drawer.open {
+        max-height: 300px; /* Adjust as needed */
+        overflow-y: auto;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        background-color: #f1f1f1;
+        margin-top: 5px;
+        border-radius: 3px;
+      }
+      li span {
+        flex: 1;
+      }
+      li button {
+        margin-left: 10px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      #importExportContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      #importButton,
+      #exportButton {
+        padding: 5px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>需要屏蔽动态的用户id</h1>
+    <div id="keywordInputContainer">
+      <input type="text" id="keyword" placeholder="id名称" />
+      <button id="addKeyword">添加</button>
+    </div>
+    <button id="drawerToggle">显示已屏蔽的用户</button>
+    <div id="drawer">
+      <ul id="keywordList"></ul>
+    </div>
+    <div id="importExportContainer">
+      <input type="file" id="importFile" style="display: none" />
+      <button id="importButton">导入</button>
+      <button id="exportButton">导出</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
