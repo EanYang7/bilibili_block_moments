@@ -1,0 +1,2 @@
+# bilibili_block_moments
+用于过滤掉B站不需要显示指定用户动态的浏览器插件，适用于Chrome和Edge
